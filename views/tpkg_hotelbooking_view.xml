@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+      <!-- Product form -->
+      <record model="ir.ui.view" id="tpkg_hotelbooking_view">
+	<field name="name">tpkg_hotelbooking.package.form</field>
+	<field name="model">tour.hotelbooking</field>
+	<field name="priority" eval="20"/>
+	<field name="arch" type="xml">
+	  <form string="Tour Package" version="7.0">
+	    <sheet>
+	      <label for="hotel_id" />
+	      <field name="hotel_id" />
+	      <newline />
+	      <group>
+		<group>
+		  <field name="checkin_date" />
+		  <field name="checkout_date" />
+		  <field name="rooms" />		  
+		</group>		
+	      </group>	      
+	    </sheet>
+	  </form>
+	</field>
+      </record>
+
+      <!-- Product tree -->
+      <record model="ir.ui.view" id="tpkg_hotelbooking_view">
+	<field name="name">tpkg_hotelbooking_view.package.tree</field>
+	<field name="model">tour.hotelbooking</field>
+	<field name="priority" eval="20"/>
+	<field name="arch" type="xml">
+	  <tree string="Tour Package" version="7.0">
+	    <field name="hotel_id" />
+	    
+	  </tree>
+	</field>
+      </record>
+
+      <!-- Accion que crea la vista de cursos -->
+        <record model="ir.actions.act_window" id="tpkg_hotelbooking_list_action">
+	  <field name="name">Hotels</field>
+	  <field name="res_model">tour.hotelbooking</field>
+	  <field name="view_type">form</field>
+	  <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+	    <p class="oe_view_nocontent_create">
+	      Click to add Hotels.
+	    </p>
+	    <p>
+	      Create new awsome Hotels.
+	    </p>
+	  </field>
+      </record>
+      <!-- Creo el menu que llama a la accion -->
+      <menuitem name="Hotels" string="Hotels" id="menu_tpkg_hotels_booking" parent="main_menu_manageproducts" action="tpkg_hotelbooking_list_action" />
+
+    </data>
+</openerp>

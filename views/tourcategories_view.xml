@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+       <!-- Cruise cabin type form -->
+      <record model="ir.ui.view" id="tc_cruisecabin_view">
+        <field name="name">tour.cruise.cabin.form</field>
+        <field name="model">tour.cruise.cabin</field>
+        <field name="priority" eval="60"/>
+        <field name="arch" type="xml">
+          <form string="Tour Cruise Cabin" version="7.0">
+            <sheet>
+              <label for="name" />
+              <field name="name" />
+              <newline />
+              <label for="description" />
+              <field name="description" />
+            </sheet>
+          </form>
+        </field>
+      </record>
+ 
+      <!-- Cruise class form -->
+      <record model="ir.ui.view" id="tc_cruiseclass_view">
+        <field name="name">tour.cruise.class.form</field>
+        <field name="model">tour.cruise.class</field>
+        <field name="priority" eval="60"/>
+        <field name="arch" type="xml">
+          <form string="Tour Cruise Class" version="7.0">
+            <sheet>
+              <label for="name" />
+              <field name="name" />
+              <newline />
+              <label for="description" />
+              <field name="description" />
+            </sheet>
+          </form>
+        </field>
+      </record>
+  
+      <!-- Cruise style form -->
+      <record model="ir.ui.view" id="tc_cruisestyle_view">
+        <field name="name">tour.cruise.style.form</field>
+        <field name="model">tour.cruise.style</field>
+        <field name="priority" eval="50"/>
+        <field name="arch" type="xml">
+          <form string="Tour Cruise Style" version="7.0">
+            <sheet>
+              <label for="name" />
+              <field name="name" />
+              <newline />
+              <label for="description" />
+              <field name="description" />
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <!-- Accommodation style form -->
+      <record model="ir.ui.view" id="tc_accommodationstyle_view">
+        <field name="name">tour.accommodation.style.form</field>
+        <field name="model">tour.accommodation.style</field>
+        <field name="priority" eval="60"/>
+        <field name="arch" type="xml">
+          <form string="Tour Cruise Style" version="7.0">
+            <sheet>
+              <label for="name" />
+              <field name="name" />
+              <newline />
+              <label for="description" />
+              <field name="description" />
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <!-- Accommodation room type form -->
+      <record model="ir.ui.view" id="tc_accommodation_roomtype_view">
+	<field name="name">tour.accommodation.roomtype.form</field>
+	<field name="model">tour.accommodation.room.type</field>
+	<field name="priority" eval="70"/>
+	<field name="arch" type="xml">
+	  <form string="Accommodation Room Type" version="7.0">
+	    <sheet>
+	      <label for="name" />
+	      <field name="name" />
+	      <newline />
+	      <label for="description" />
+	      <field name="description" />
+	    </sheet>
+	  </form>
+	</field>
+      </record>
+
+      <!-- Menu Principal -->
+      <menuitem name="Manage Categories" string="Manage Categories" id="tour_main_menu_managecategories" parent="main_menu_touroperator" />
+      
+      <!-- Action calling Cruise Cabin Style -->
+      <record model="ir.actions.act_window" id="tc_cruisecabin_list_action">
+        <field name="name">Cruise Classes</field>
+        <field name="res_model">tour.cruise.cabin</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add cruise cabin styles
+          </p>
+          <p>
+            Create new cruise cabin styles
+          </p>
+        </field>
+      </record>
+
+      <!-- Action calling Cruise Class -->
+      <record model="ir.actions.act_window" id="tc_cruiseclass_list_action">
+        <field name="name">Cruise Classes</field>
+        <field name="res_model">tour.cruise.class</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add cruise classes
+          </p>
+          <p>
+            Create new cruise classes.
+          </p>
+        </field>
+      </record>
+
+      <!-- Action calling Cruise Style -->
+        <record model="ir.actions.act_window" id="tc_cruisestyle_list_action">
+          <field name="name">Cruise Styles</field>
+          <field name="res_model">tour.cruise.style</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+              Click to add cruise styles.
+            </p>
+            <p>
+              Create new cruise styles.
+            </p>
+          </field>
+        </record>
+
+      <!-- Action calling Accommodation Style -->
+        <record model="ir.actions.act_window" id="tc_accommodationstyle_list_action">
+	  <field name="name">Accommodation Styles</field>
+	  <field name="res_model">tour.accommodation.style</field>
+	  <field name="view_type">form</field>
+	  <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+	    <p class="oe_view_nocontent_create">
+	      Click to add accommodation styles.
+	    </p>
+	    <p>
+	      Create new accommodation styles.
+	    </p>
+	  </field>
+      </record>
+
+      <!-- Action calling Accommodation Room Type -->
+        <record model="ir.actions.act_window" id="tc_accommodation_roomtype_action">
+	  <field name="name">Accommodation Room Type</field>
+	  <field name="res_model">tour.accommodation.room.type</field>
+	  <field name="view_type">form</field>
+	  <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+	    <p class="oe_view_nocontent_create">
+	      Click to add accommodation room types.
+	    </p>
+	    <p>
+	      Create new accommodation room types.
+	    </p>
+	  </field>
+      </record>
+
+        <!-- Menu calling Cruise Cabin -->
+        <menuitem name="Cruise Cabins" string="Cruise Cabins" 
+                    id="menu_tc_cruisecabin" 
+                parent="tour_main_menu_managecategories" 
+                action="tc_cruisecabin_list_action" />
+
+        <!-- Menu calling Cruise Classes -->
+        <menuitem name="Cruise Clases" string="Cruise Classes" 
+                    id="menu_tc_cruiseclass" 
+                parent="tour_main_menu_managecategories" 
+                action="tc_cruiseclass_list_action" />
+
+        <!-- Menu calling Cruise Styles -->
+        <menuitem name="Cruise Styles" string="Cruise Styles" 
+                    id="menu_tc_cruisestyle" 
+                parent="tour_main_menu_managecategories" 
+                action="tc_cruisestyle_list_action" />
+            
+        <!-- Menu calling Accommodation Styles -->
+        <menuitem name="Accommodation Styles" string="Accommodation Styles" 
+                    id="menu_tc_accommodationstyle" 
+                parent="tour_main_menu_managecategories" 
+                action="tc_accommodationstyle_list_action" />
+
+        <!-- Menu calling Accommodation Room Types -->
+        <menuitem name="Accommodation Room Types" 
+                string="Accommodation Room Types" 
+                    id="menu_tc_accommodationroomtype" 
+                parent="tour_main_menu_managecategories" 
+                action="tc_accommodation_roomtype_action" />
+
+    </data>
+</openerp>
