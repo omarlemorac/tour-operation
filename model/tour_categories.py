@@ -75,6 +75,19 @@ class CruiseStyle(osv.Model):
 
         }
 
+class CruiseBedType(osv.Model):
+    """
+    @description: Bed type tag
+
+    """
+    _name="tour.cruise.bed.type"
+    _columns={
+        'name':fields.char('Name', size=100, required=True, translate=True),
+        'description':fields.text('Description'),
+        'product_id':fields.many2one('product.product', 'Product')
+        }
+
+
 class AccommodationStyle(osv.Model):
     """
     @description: Accommodation style category tag

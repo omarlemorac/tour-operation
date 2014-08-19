@@ -69,7 +69,7 @@ class Product(osv.Model):
             help="Choose cabin styles for the cruise"
             )
         ,'cruise_bed_ids':fields.one2many(
-            'tour.bed.type', "product_id",'Bed Type',
+            'tour.cruise.bed.type', "product_id",'Bed Type',
             help="Tour bed type available"
             )
         ,'cruise_room_sharing':fields.selection([
@@ -83,11 +83,11 @@ class Product(osv.Model):
         ,'lodge_capacity':fields.integer("Capacity")
         ,'lodge_generic_url':fields.char("Generic Website", size=255)
         ,'lodge_class_id':fields.many2one("tour.lodge.class"
-                , "Clase", help="Choose class for lodge")
+                , "Class", help="Choose class for lodge")
         ,'lodge_location':fields.char("Location", size=255)
         ,'lodge_language_ids':fields.one2many(
                 'tour.language', 'product_id','Language',
-                help='Chose languages available')
+                help='Chose language(s) available(s)')
         ,'lodge_has_transportation':fields.boolean('Transportation')
 
         ,'lodge_room_sharing':fields.selection([

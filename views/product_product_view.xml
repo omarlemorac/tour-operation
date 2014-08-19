@@ -36,7 +36,12 @@
                           <field name="cruise_generic_url" colspan="2" />
                           <field name="cruise_style_id" />
                           <field name="cruise_class_id" />
-                          <field name="cruise_cabin_ids" widget="many2many_tags" />
+                          <field name="cruise_cabin_ids" widget="many2many_tags" >
+                              <form string="Cruise Bed Type">
+                                  <field name="name" />
+                                  <field name="description" />
+                              </form>
+                          </field>
                           <field name="cruise_bed_ids" widget="many2many_tags" />
                       </group>    
                       <group name="services">
@@ -58,7 +63,8 @@
                     <group>
                         <field name="lodge_has_transportation" />
                         <field name="lodge_room_sharing" />
-                        <field name="lodge_room_type_ids" widget="many2many_tags" />
+                        <field name="lodge_room_type_ids" widget="many2many_tags"/>
+                        <field name="lodge_capacity" />
                     </group>
                 </group>
               </page>
