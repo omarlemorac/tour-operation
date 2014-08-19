@@ -19,8 +19,8 @@ class Product(osv.Model):
             ('fticket','Flight Ticket'),
             ('accommodation','Accommodation'),
             ('lodge','Lodge'),
-            ('packages','Packages'),
-            ('transfers','Transfers'),
+            ('package','Package'),
+            ('transfer','Transfer'),
             ('assistance','Assistance'),
             ('misc','Miscellaneous'),
             ('none','None')
@@ -100,6 +100,32 @@ class Product(osv.Model):
                 'tour.lodge.room.type', 'product_id', 'Room Style',
                 help='Choose room types'
                 )
+
+        #Package
+        ,'package_locations':fields.text('Locations')
+        ,'package_class':fields.selection([
+            ('luxury','Luxury'),
+            ('first','First Class'),
+            ('tourist_sup','Tourist Superior'),
+            ('tourist','Tourist'),
+            ('economy','Economy')
+            ], 'Class', required=False, help='Select package class')
+        ,'package_duration':fields.integer('Duration',
+                help='Duration in days')
+        ,'package_is_private':fields.boolean('Private')
+
+        ,'package_language_ids':fields.one2many(
+                'tour.language', 'product_id','Language',
+                help='Chose language(s) available(s)')
+        ,'package_has_assistance':fields.boolean('Assistance',
+                help='Does this package has assistance?')
+        ,'itinerary':fields.binary('Itinerary')
+        #Transfers
+        ,'transfer_language_ids':fields.one2many(
+                'tour.language', 'product_id','Language',
+                help='Chose language(s) available(s)')
+        ,'transfer_has_assistance':fields.boolean('Assistance',
+                help='Has the transfer assistance?')
 
         }
     _defaults={

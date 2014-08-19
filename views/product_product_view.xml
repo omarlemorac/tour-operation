@@ -56,9 +56,9 @@
               <page string="Lodge" attrs="{'invisible':['|',('tour_category','!=','lodge')]}">                <group>
                     <group name="style">
                         <field name="lodge_generic_url" colspan="2" />
+                        <field name="lodge_language_ids" widget="many2many_tags" />
                         <field name="lodge_class_id" />
                         <field name="lodge_location" />
-                        <field name="lodge_language_ids" widget="many2many_tags" />
                     </group>    
                     <group>
                         <field name="lodge_has_transportation" />
@@ -68,6 +68,30 @@
                     </group>
                 </group>
               </page>
+             <page string="Package" attrs="{'invisible':['|',('tour_category','!=','package')]}">                
+                 <group> 
+                      <group name="style">
+                        <field name="package_locations" colspan="2" />
+                        <field name="package_language_ids" widget="many2many_tags" />
+                        <field name="package_class" />
+                        <field name="package_duration" />
+                    </group>    
+                    <group>
+                        <field name="package_is_private" />
+                        <field name="package_has_assistance" />
+                        <field name="itinerary"/>
+                    </group>
+                </group>
+             </page>
+             <page string="Transfer" 
+                    attrs="{'invisible':['|',('tour_category','!=','transfer')]}">                
+                 <group> 
+                      <group name="style">
+                        <field name="transfer_has_assistance" />
+                        <field name="transfer_language_ids" widget="many2many_tags" />
+                    </group>
+                </group>
+             </page>
             </notebook>
           </field>
         </record>
