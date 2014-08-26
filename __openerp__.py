@@ -7,6 +7,7 @@ _____________________________________________
 
 - Manage tour products:
   Cruises, accommodations, flight tickets, lodges, transfers, miscellaneous.
+- Tour and Travel categories for products
 - Travel itinerary. TODO:
 - Manage pax (passengers). TODO:
 - Invoice creation. TODO:
@@ -16,7 +17,7 @@ _____________________________________________
     "author":"Accioma",
     "data":["security/res_groups.xml",
             "security/ir.model.access.csv",
-            "views/tourproduct_view.xml",
+            "views/tour_operation_view.xml",
             "views/tourcategories_view.xml",
             "views/product_product_view.xml",
            ],

@@ -1,5 +1,2 @@
-import tourproduct
-import tourpackage
-import tpkg_hotelbooking
 import product
 import tour_categories

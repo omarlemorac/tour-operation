@@ -1,6 +1,5 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 ato_access_package_class_m,package_class_m,model_tour_package_class,tour_operation.ato_group_manager,1,1,1,0
-ato_access_tour_package_m,access_tour_package_m,model_tour_package,tour_operation.ato_group_manager,1,1,1,0
 ato_access_tour_lodge_class_m,access_tour_lodge_class_m,model_tour_lodge_class,tour_operation.ato_group_manager,1,1,1,0
 ato_access_tour_lodge_room_type_m,access_tour_lodge_room_type_m,model_tour_lodge_room_type,tour_operation.ato_group_manager,1,1,1,0
 ato_access_tour_cruise_cabin_m,access_tour_cruise_cabin_m,model_tour_cruise_cabin,tour_operation.ato_group_manager,1,1,1,0
